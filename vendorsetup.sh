@@ -20,5 +20,6 @@
 # In particular, you can add lunch options with the add_lunch_combo
 # function: add_lunch_combo generic-eng
 
-add_lunch_combo htc_vision-userdebug
-add_lunch_combo htc_vision-eng
+#We're only going to be building Evervolv, so comment this out for now
+#add_lunch_combo htc_vision-userdebug
+#add_lunch_combo htc_vision-eng
