@@ -68,6 +68,7 @@ BOARD_EGL_CFG := device/htc/vision/egl.cfg
 BOARD_USES_QCOM_LIBS := true
 BOARD_USES_QCOM_LIBRPC := true
 BOARD_USES_QCOM_GPS := true
+BOARD_USE_QCOM_PMEM := true
 
 BOARD_CAMERA_USE_GETBUFFERINFO := true
 
@@ -79,11 +80,14 @@ BOARD_USE_BROADCOM_FM_VOLUME_HACK := true
 
 BOARD_USE_FROYO_LIBCAMERA := true
 
+# Workaround for Vision's broken overlay scaling
+BOARD_OVERLAY_MINIFICATION_LIMIT := 2
+
+# Current drivers don't support new EGL config
+BOARD_NO_RGBX_8888 := true
+
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := vision
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 1240
-
-# Use RGB565 surfaces until userspace drivers are upgraded
-BOARD_NO_RGBX_8888 := true
 
 # Use nasty hack to make Kineto work
 BOARD_USE_KINETO_COMPATIBILITY := true
@@ -113,3 +117,4 @@ BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk1
 BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p2
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
+BOARD_USES_RECOVERY_CHARGEMODE := true
